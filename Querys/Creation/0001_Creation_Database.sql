@@ -12,3 +12,22 @@ CREATE TABLE users(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE users_account_password(
+id int AUTO_INCREMENT,
+fk_users_account int NOT NULL,
+passwd varchar(300) NOT NULL,
+fecha_inicio datetime NOT NULL,
+fecha_fin datetime 
+);
+
+CREATE TABLE users_account (
+id int AUTO_INCREMENT,
+fk_users int NOT NULL,
+email varchar(100) NOT NULL
+);
+
+CREATE TABLE users_oauth( -- no está terminada
+id int AUTO_INCREMENT,
+auth varchar(100) NOT NULL,
+fk_users int (100)
+);
