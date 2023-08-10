@@ -1,0 +1,2 @@
+cada persona va a poder agregar la info de su dirección (pq) para recomendarle zonas opcionalmente
+otra tabla de datos personales para su perfil (estará conectada con la tabla de usuarios)
