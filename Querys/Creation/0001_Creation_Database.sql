@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS ;
 DROP TABLE IF EXISTS ;
 -- LVL5
 DROP TABLE IF EXISTS ;
--- LVL4
+-- LVL4 
 DROP TABLE IF EXISTS ;
 -- LVL3
 DROP TABLE IF EXISTS users;
@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS images;
 -- CREATION
 
 
--- Without FK (LVL0)
+-- Without FK (LVL0) azul
 CREATE TABLE identification_types(
 	id int AUTO_INCREMENT,
     name varchar(120) UNIQUE NOT NULL,
@@ -45,9 +45,30 @@ CREATE TABLE images(
     dt_upload datetime NOT NULL DEFAULT NOW(),
     PRIMARY KEY (id)
 );
-
-
--- LV1
+CREATE TABLE tags(
+	id int AUTO_INCREMENT,
+    tag varchar(66) NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE events(
+	id int AUTO_INCREMENT,
+    e_start date NOT NULL,
+    e_end date NOT NULL,
+    description text,
+    PRIMARY KEY(id)
+);
+CREATE TABLE host_roles(
+	id int AUTO_INCREMENT,
+    role varchar(33) NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE punctuation_type(
+	id int AUTO_INCREMENT,
+    name varchar(33) NOT NULL,
+    description varchar(150),
+    PRIMARY KEY(id)
+);
+-- LV1 verde
 CREATE TABLE towns(
 	id int AUTO_INCREMENT,
     fk_states int NOT NULL,
@@ -55,9 +76,26 @@ CREATE TABLE towns(
     PRIMARY KEY(id),
     FOREIGN KEY (fk_states) REFERENCES states(id)
 );
+CREATE TABLE events_gallery(
+	id int AUTO_INCREMENT,
+    fk_images int NOT NULL,
+    fk_events int NOT NULL,
+    img_type char NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY (fk_images) REFERENCES images(id),
+    FOREIGN KEY (fk_events) REFERENCES events(id)
+);
+CREATE TABLE schedules_event(
+	id int AUTO_INCREMENT,
+    fk_events int NOT NULL,
+    s_start time NOT NULL,
+    s_end time NOT NULL,
+    s_day varchar(9) NOT NULL,
+    PRIMARY KEY(id),
+    
+);
 
-
--- LV2
+-- LV2 naranja
 CREATE TABLE locations(
 	id int AUTO_INCREMENT,
     fk_towns int NOT NULL,
@@ -70,8 +108,7 @@ CREATE TABLE locations(
     FOREIGN KEY (fk_towns) REFERENCES towns(id)
 );
 
-
--- LV3
+-- LV3 rosa
 CREATE TABLE users(
 	id int AUTO_INCREMENT,
     fk_locations int,
@@ -83,9 +120,16 @@ CREATE TABLE users(
     PRIMARY KEY(id),
     FOREIGN KEY (fk_locations) REFERENCES locations(id)
 );
+CREATE TABLE touristic_places(
+	id int AUTO_INCREMENT,
+    fk_locations int NOT NULL,
+    name char (25),
+    state char NOT NULL,
+    PRIMARY KEY(id)
+);
 
 
--- LV4
+-- LV4 blanco
 CREATE TABLE google_2fas(
 	id int AUTO_INCREMENT,
     fk_users int NOT NULL,
@@ -94,112 +138,143 @@ CREATE TABLE google_2fas(
     FOREIGN KEY (fk_users) REFERENCES users(id)
 );
 
-CREATE TABLE (
+CREATE TABLE reviews(
 	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-CREATE TABLE (
-	id int AUTO_INCREMENT,
-    
-    PRIMARY KEY(id)
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE users_account (
-	id int AUTO_INCREMENT,
-	fk_users int NOT NULL,
-	email varchar(100) NOT NULL UNIQUE,
-    fecha_inicio datetime NOT NULL,
-    fecha_fin datetime,
+    fk_users int NOT NULL,
+    dt_posted datetime NOT NULL,
+    content text,
     PRIMARY KEY(id),
-    FOREIGN KEY(fk_users) REFERENCES users(id)
+    FOREIGN KEY (fk_users) REFERENCES users(id)
 );
 
+CREATE TABLE registers_events(
+	id int AUTO_INCREMENT,
+    fk_events int,
+    fk_users int,
+    reg_start date NOT NULL,
+    reg_end date NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE users_punctuation(
+	id int AUTO_INCREMENT,
+    fk_users int,
+    fk_punctuation_type int,
+    punctuation int,
+    dt_obtained datetime NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE users_account(
+	id int AUTO_INCREMENT,
+    fk_users int NOT NULL,
+    email varchar(100) NOT NULL,
+    date_start datetime NOT NULL,
+    date_end datetime,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE users_oauth(
+	id int AUTO_INCREMENT,
+    fk_users int,
+    fk_identification_types int,
+    oauth_uid_key varchar(100) NOT NULL,
+    date_start datetime NOT NULL,
+    date_end datetime,
+    PRIMARY KEY(id)
+);
+CREATE TABLE hosts(
+	id int AUTO_INCREMENT,
+    fk_users int NOT NULL,
+    host_name varchar(25),
+    identity_file_documents varchar(400),
+    state char NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE events_places(
+	id int AUTO_INCREMENT,
+    fk_touristic_places int NOT NULL,
+    fk_events int NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE places_gallery(
+	id int AUTO_INCREMENT,
+    fk_images int NOT NULL,
+    fk_t_places int NOT NULL,
+    img_type char NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE users_gallery(
+	id int AUTO_INCREMENT,
+    fk_images int NOT NULL,
+    fk_users int NOT NULL,
+    img_type char NOT NULL,
+    state char NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE users_friends(
+	id int AUTO_INCREMENT,
+    fk_users_doer int NOT NULL,
+    fk_users int NOT NULL,
+    status_usr_doer char NOT NULL,
+    status_usr char NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE tags_places(
+	id int AUTO_INCREMENT,
+    fk_touristic_place int NOT NULL,
+    fk_tags int NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE schedules_touristic_place(
+	id int AUTO_INCREMENT,
+    fk_touristic_place int NOT NULL,
+    s_start time NOT NULL,
+    s_end time NOT NULL,
+    s_day varchar(9) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+-- LV5 gris
+CREATE TABLE reviews_events(
+	id int AUTO_INCREMENT,
+    fk_reviews int NOT NULL,
+    fk_events int NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE host_event(
+	id int AUTO_INCREMENT,
+    fk_event int NOT NULL,
+    fk_hosts int NOT NULL,
+    fk_host_roles int NOT NULL,
+    link_dt datetime,
+    PRIMARY KEY(id)
+);
 CREATE TABLE users_account_password(
 	id int AUTO_INCREMENT,
-	fk_users_account int NOT NULL,
-	passwd varchar(300) NOT NULL,
-	fecha_inicio datetime NOT NULL,
-	fecha_fin datetime,
-    PRIMARY KEY(id),
-    FOREIGN KEY(fk_users_account) REFERENCES users_account(id)
+    fk_users_account int NOT NULL,
+    password varchar(300) NOT NULL,
+    date_start datetime NOT NULL,
+    date_end datetime,
+    PRIMARY KEY(id)
 );
-
-CREATE TABLE users_oauth( -- no está terminada
+CREATE TABLE host_touristic_place(
 	id int AUTO_INCREMENT,
-	auth varchar(100) NOT NULL,
-	fk_users int (100)
+    fk_touristic_places int NOT NULL,
+    fk_host_roles int NOT NULL,
+    fk_host int NOT NULL,
+    link_dt datetime,
+    PRIMARY KEY(id)
+);
+CREATE TABLE reviews_places(
+	id int AUTO_INCREMENT,
+    fk_reviews int NOT NULL,
+    fk_places int NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE review_images(
+	id int AUTO_INCREMENT,
+    fk_reviews int,
+    fk_images int,
+    PRIMARY KEY(id)
 );
 
 
