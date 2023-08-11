@@ -3,36 +3,55 @@ CREATE DATABASE mexanizate;
 USE mexanizate;
 
 -- DROPS
--- LVL7
-DROP TABLE IF EXISTS ;
--- LVL6
-DROP TABLE IF EXISTS ;
 -- LVL5
-DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS reviews_events;
+DROP TABLE IF EXISTS host_event;
+DROP TABLE IF EXISTS users_account_password;
+DROP TABLE IF EXISTS host_touristic_place;
+DROP TABLE IF EXISTS reviews_places;
+DROP TABLE IF EXISTS review_images;
 -- LVL4 
-DROP TABLE IF EXISTS ;
+DROP TABLE IF EXISTS google_2fas;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS registers_events;
+DROP TABLE IF EXISTS users_punctuation;
+DROP TABLE IF EXISTS users_account;
+DROP TABLE IF EXISTS users_oauth;
+DROP TABLE IF EXISTS hosts;
+DROP TABLE IF EXISTS events_places;
+DROP TABLE IF EXISTS places_gallery;
+DROP TABLE IF EXISTS users_gallery;
+DROP TABLE IF EXISTS users_friends;
+DROP TABLE IF EXISTS tags_places;
+DROP TABLE IF EXISTS schedules_touristic_place;
 -- LVL3
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS touristic_places;
 -- LVL2
 DROP TABLE IF EXISTS locations;
 -- LVL1
 DROP TABLE IF EXISTS towns;
+DROP TABLE IF EXISTS events_gallery;
+DROP TABLE IF EXISTS schedules_event;
 -- LVL0
 DROP TABLE IF EXISTS identification_types;
 DROP TABLE IF EXISTS states;
 DROP TABLE IF EXISTS images;
+DROP TABLE IF EXISTS tags;
+DROP TABLE IF EXISTS events;
+DROP TABLE IF EXISTS host_roles;
+DROP TABLE IF EXISTS punctuation_type;
 
 
 -- CREATION
-
-
 -- Without FK (LVL0) azul
 CREATE TABLE identification_types(
 	id int AUTO_INCREMENT,
-    name varchar(120) UNIQUE NOT NULL,
-    description char(150),
+    name varchar(120) UNIQUE NOT NULL, CHECK (name REGEXP '^[A-Za-z\\s0-9]*'),
+    description char(150), CHECK (description REGEXP '^[A-Za-z\\s0-9]*'),
     PRIMARY KEY(id)
 );
+
 CREATE TABLE states(
 	id int AUTO_INCREMENT,
     state varchar(19) UNIQUE NOT NULL,
@@ -166,7 +185,7 @@ CREATE TABLE users_punctuation(
 CREATE TABLE users_account(
 	id int AUTO_INCREMENT,
     fk_users int NOT NULL,
-    email varchar(100) NOT NULL,
+    email varchar(100) NOT NULL, CHECK (email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'),
     date_start datetime NOT NULL,
     date_end datetime,
     PRIMARY KEY(id)
