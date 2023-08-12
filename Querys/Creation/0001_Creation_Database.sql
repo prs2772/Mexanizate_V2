@@ -83,7 +83,7 @@ CREATE TABLE host_roles(
 );
 CREATE TABLE punctuation_type(
 	id int AUTO_INCREMENT,
-    name varchar(33) NOT NULL,
+    name varchar(33) NOT NULL UNIQUE,
     description varchar(150),
     PRIMARY KEY(id)
 );
@@ -185,10 +185,11 @@ CREATE TABLE users_punctuation(
 CREATE TABLE users_account(
 	id int AUTO_INCREMENT,
     fk_users int NOT NULL,
-    email varchar(100) NOT NULL, CHECK (email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'),
+    email varchar(100) NOT NULL UNIQUE, CHECK (email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'),
     date_start datetime NOT NULL,
     date_end datetime,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY(fk_users) REFERENCES users(id)
 );
 
 CREATE TABLE users_oauth(
@@ -273,7 +274,8 @@ CREATE TABLE users_account_password(
     password varchar(300) NOT NULL,
     date_start datetime NOT NULL,
     date_end datetime,
-    PRIMARY KEY(id)
+    PRIMARY KEY(id),
+    FOREIGN KEY (fk_users_account) REFERENCES users_account(id)
 );
 CREATE TABLE host_touristic_place(
 	id int AUTO_INCREMENT,
