@@ -229,7 +229,7 @@ CREATE TABLE events_places(
 CREATE TABLE places_gallery(
 	id int AUTO_INCREMENT,
     fk_images int NOT NULL,
-    fk_t_places int NOT NULL,
+    fk_touristic_places int NOT NULL,
     img_type char NOT NULL, CHECK (img_type IN ('B','M','A','P')),
     -- Perfil Place Back(B)
     -- Perfil Main image(U)
@@ -237,7 +237,7 @@ CREATE TABLE places_gallery(
     -- Proof(P)
     PRIMARY KEY(id),
     FOREIGN KEY(fk_images) REFERENCES images(id),
-    FOREIGN KEY(fk_t_places) REFERENCES touristic_places(id)
+    FOREIGN KEY(fk_touristic_places) REFERENCES touristic_places(id)
 );
 CREATE TABLE users_gallery(
 	id int AUTO_INCREMENT,
@@ -273,20 +273,20 @@ CREATE TABLE users_friends(
 );
 CREATE TABLE tags_places(
 	id int AUTO_INCREMENT,
-    fk_touristic_place int NOT NULL,
+    fk_touristic_places int NOT NULL,
     fk_tags int NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY(fk_touristic_place) REFERENCES touristic_place(id),
+    FOREIGN KEY(fk_touristic_places) REFERENCES touristic_places(id),
     FOREIGN KEY(fk_tags) REFERENCES tags(id)
 );
 CREATE TABLE schedules_touristic_place(
 	id int AUTO_INCREMENT,
-    fk_touristic_place int NOT NULL,
+    fk_touristic_places int NOT NULL,
     s_start time NOT NULL,
     s_end time NOT NULL,
     s_day tinyint NOT NULL, CHECK(s_day BETWEEN 0 AND 6),
     PRIMARY KEY(id),
-    FOREIGN KEY(fk_touristic_place) REFERENCES touristic_place(id)
+    FOREIGN KEY(fk_touristic_places) REFERENCES touristic_places(id)
 );
 
 -- LV5 gris
@@ -332,10 +332,10 @@ CREATE TABLE hosts_touristic_place(
 CREATE TABLE reviews_places(
 	id int AUTO_INCREMENT,
     fk_reviews int NOT NULL,
-    fk_places int NOT NULL,
+    fk_touristic_places int NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(fk_reviews) REFERENCES reviews(id),
-    FOREIGN KEY(fk_places) REFERENCES places(id)
+    FOREIGN KEY(fk_touristic_places) REFERENCES touristic_places(id)
 );
 CREATE TABLE review_images(
 	id int AUTO_INCREMENT,
