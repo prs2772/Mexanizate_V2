@@ -1,0 +1,7 @@
+agregar checks de regexp
+
+para password ¿qué caracteres se aceptan? y hacer su expresión regular
+validar que la contraseña sea segura y aceptable*
+
+validar que solo puedan ingresar información válida en los diversos campos
+
