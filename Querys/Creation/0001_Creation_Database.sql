@@ -134,7 +134,7 @@ CREATE TABLE locations(
 CREATE TABLE users(
 	id int AUTO_INCREMENT,
     fk_locations int,
-    username char(25) NOT NULL, CHECK (username REGEXP '^[A-Za-z0-9áéíóúÁÉÍÓÚ¿?¡!_:,;&#/^<>~%°|"\\p{Emoji}\\[\\]\\{\\}\\*\\s\\-\\+\\n\\.\'\\$\\(\\)\\\\]+$'),
+    username char(25), CHECK (username REGEXP '^[A-Za-z0-9áéíóúÁÉÍÓÚ¿?¡!_:,;&#/^<>~%°|"\\p{Emoji}\\[\\]\\{\\}\\*\\s\\-\\+\\n\\.\'\\$\\(\\)\\\\]+$'),
     first_name varchar(100), CHECK(first_name REGEXP '^[A-Za-z\\s0-9áéíóúÁÉÍÓÚñÑüÜ]+$'),
     last_name_p1 varchar(100), CHECK(last_name_p1 REGEXP '^[A-Za-z\\s0-9áéíóúÁÉÍÓÚñÑüÜ]+$'),
     last_name_p2 varchar(100), CHECK(last_name_p2 REGEXP '^[A-Za-z\\s0-9áéíóúÁÉÍÓÚñÑüÜ]+$'),
