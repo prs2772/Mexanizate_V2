@@ -1,0 +1,34 @@
+descrpción
+es una app que te permite mantener la trazabilidad de tus viajes y ayudarte a encontrar el mejor lugar cerca de ti compatible con dispositivos móviles y ordenador
+-verificación para usuario y/o anfitrión
+-landing page (home)
+	-tiene la foto de perfil
+	-muestra lo más relevante
+	-tiene el menú desplegado al iniciar la app, el menú se contrae al navegar entre pestañas
+-notificaciones
+	-es un ícono en un menú oculto desplegable al lateral de la app que al macena un pequeño historial de tus notificacionesno leídas
+	-fuera de la app te manda las notificaciones 
+	-cuando tocas la notificacion fuera de la app, te manda directamente al apartado del que trata la noficación
+-sugerencias de lugares
+	-es otro ícono de el menú desplegable, es el algoritmo de recomendación de lugares basado en las preferencias del usuario y en interacciones previas (usa etiquetas)
+-eventos
+	-otro ícono más del menú desplegable con lugares de exposición temporal como ferias, fiestas, etc...
+	-tiene una lista desplegable de los expositores registrados junto con sus respectivos productos o servicios
+-organizar tiempo (agenda)
+	-calendario interactivo que registra los eventos, lugares y horarios a los que irás para gestionar el tiempo de un día de paseo
+-agenda de anfitriones
+	-registro de horarios para expositores/vendedores en determinado lugar, hora y fecha
+	-panel de resumen de actividades en las que el anfitrión participará
+-ofertar lugares para que la gente los vea (divulgar)
+	-registrar los lugares que has visitado con fotos y ubicación (puestos callejeros, parques, antros, etc...)
+-dejar reseñas públicas de los lugares visitados
+	-dentro de los lugares, habrá una pestaña de comentarios, en los que cualquier persona puede comentar, darle estrellas a la zona o establecimiento y dejar una reseña ("ahí de noche asaltan")
+-publicar información de eventos o lugares (dentro de eventos)
+	-esto es similar a las reseñas públicas, pero es dentro de los eventos
+-competir con otros usuarios (puntuación-laderboard) puntos por demostrar que fuiste a algún lugar que puedes canjear en ciertos establecimientos
+	-distintos tipos de puntuaciones (a definir, como premium por ejemplo) que sae obtienen de formas diferentes, paarticiándo en eventos, viajando, etc...
+	-competencias temporales con premios como incentivo para acumular puntos
+	-descuentos en ciertos artículos por nivel en el tablero o algo así...
+-puedes agregar usuarios como amigos para seguir sus recomendaciones
+	-puedes agregar usuarios, eliminarlos como amigos y bloquearlos
+	-otros usuarios pueden aparecer en los comentarios de los eventos y/o lugares
