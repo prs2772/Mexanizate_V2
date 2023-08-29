@@ -62,6 +62,7 @@ DELIMITER ;
 
 CALL c_user_by_email('asd', '#"1234');
 CALL c_user_by_email('paris.140816@gmail.com', '1234');
+CALL r_user_by_email('paris.140816@gmail.com', '1234');
 SELECT * FROM users;
 SELECT * FROM users_account;
 SELECT * FROM users_account_password;

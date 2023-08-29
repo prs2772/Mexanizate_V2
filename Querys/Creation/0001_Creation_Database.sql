@@ -193,7 +193,7 @@ CREATE TABLE users_account(
 	id int AUTO_INCREMENT,
     fk_users int NOT NULL,
     email varchar(100) NOT NULL UNIQUE, CHECK (email REGEXP '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'),
-    date_start datetime NOT NULL,
+    date_start datetime NOT NULL DEFAULT NOW(),
     date_end datetime,
     PRIMARY KEY(id),
     FOREIGN KEY(fk_users) REFERENCES users(id)
@@ -204,7 +204,7 @@ CREATE TABLE users_oauth(
     fk_users int NOT NULL,
     fk_identification_types int NOT NULL,
     oauth_uid_key varchar(100) NOT NULL UNIQUE,
-    date_start datetime NOT NULL,
+    date_start datetime NOT NULL DEFAULT NOW(),
     date_end datetime,
     PRIMARY KEY(id),
     FOREIGN KEY (fk_users) REFERENCES users(id),
@@ -312,8 +312,8 @@ CREATE TABLE hosts_event(
 CREATE TABLE users_account_password(
 	id int AUTO_INCREMENT,
     fk_users_account int NOT NULL,
-    password_ varchar(300) NOT NULL,
-    date_start datetime NOT NULL,
+    password_ VARBINARY(255) NOT NULL,
+    date_start datetime NOT NULL DEFAULT NOW(),
     date_end datetime,
     PRIMARY KEY(id),
     FOREIGN KEY (fk_users_account) REFERENCES users_account(id)
