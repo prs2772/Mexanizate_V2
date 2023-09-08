@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Login from './login/Login.jsx'
+import {Login} from './login/Login.jsx'
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
 
   return (
