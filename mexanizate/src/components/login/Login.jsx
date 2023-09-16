@@ -1,10 +1,12 @@
 import React from "react";
-import { LoginS1 } from "./LoginS1";
+import { LoginMenu } from "./LoginMenu";
+import { LoginIn } from "./LoginIn";
+import { LoginRegister } from "./LoginRegister";
 
 function Login() {
   return (
     <>
-      <LoginS1 />
+      <LoginMenu />
     </>
   );
 }

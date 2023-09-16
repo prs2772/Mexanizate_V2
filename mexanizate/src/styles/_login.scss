@@ -25,8 +25,9 @@
   }
 }
 
-/*Component LoginS1*/
-.login-s1__title {
+
+/*Component LoginMenu*/
+.login-menu__title {
   position: absolute;
   top: 0;
   left: calc(50% - 4.93rem);
@@ -35,7 +36,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.login-s1__logo {
+.login-menu__logo {
   margin-top: 5%;
   top: 0;
   left: 0;
@@ -43,7 +44,7 @@
   height: 95%;
   object-fit: fill;
 }
-.login-s1__button {
+.login-menu__button {
   &--login{
     margin: 0 auto;
     border-radius: var(--br-3xs);
@@ -70,7 +71,7 @@
     justify-content: center; /* Centra horizontalmente */ 
   }
 }
-.login-s1__text {
+.login-menu__text {
   &--login{
     font-size: 1.5rem;
   }
@@ -78,8 +79,7 @@
     font-size: 1.5rem;
   }
 }
-
-.login-s1__container {
+.login-menu__container {
   &--main{
     font-family: $font-terciary;
     position: relative;
@@ -109,3 +109,15 @@
     height: 18rem;
   }
 }
+
+
+/*Component LoginIn.jsx*/
+
+
+
+/*Component LoginRegister.jsx*/
+
+
+
+/*Component LoginForgotPass.jsx*/
+
