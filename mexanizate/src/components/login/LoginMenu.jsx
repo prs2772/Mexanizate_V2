@@ -17,15 +17,15 @@ const LoginMenu = () => {
           <picture>
             <source
               media="(min-width: 900px)"
-              srcset="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315889455114/Logo_MXZ_v.png"
+              srcSet="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315889455114/Logo_MXZ_v.png"
             />
             <source
               media="(min-width: 660px)"
-              srcset="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315579088956/Logo_MXZ_g.png"
+              srcSet="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315579088956/Logo_MXZ_g.png"
             />
             <source
             media="(min-width: 480px)"
-            srcset="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315251929088/Logo_MXZ.png"
+            srcSet="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315251929088/Logo_MXZ.png"
             />
             <img className="login-menu__logo"
               src="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315889455114/Logo_MXZ_v.png"
