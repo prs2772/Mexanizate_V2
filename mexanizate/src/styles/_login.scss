@@ -88,7 +88,8 @@
     height: 100vh;
     overflow: hidden;
     text-align: center;
-    padding: 15vh 17vw;
+    vertical-align: middle;
+    padding: 3vh 17vw;
   }
   &--content{
     width: 100%;
@@ -112,6 +113,182 @@
 
 
 /*Component LoginIn.jsx*/
+.login-in__title {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 4.93rem);
+  font-size: 1.5rem;
+  background: linear-gradient(0deg, #75a282, #9cf0b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.login-in__logo--mxz-icon {
+  position: absolute;
+  top: 29px;
+  left: calc(50% - 145px);
+  width: 289px;
+  height: 235px;
+  object-fit: cover;
+}
+.login-in__title-h2--inicio-de-sesion {
+  position: absolute;
+  top: 283px;
+  left: 21px;
+  font-size: 20px;
+}
+.login-in__container--inicio-sesion {
+  position: absolute;
+  top: 324px;
+  left: calc(50% - 139px);
+  font-size: 15px;
+  text-align: center;
+}
+.login-in__label--correo-electronico {
+  position: absolute;
+  top: 381px;
+  left: 21px;
+  font-weight: 600;
+}
+.login-in__container--iniciar-sesion-child {
+  position: absolute;
+  top: 417px;
+  left: calc(50% - 160px);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gainsboro);
+  border: 4px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 319px;
+  height: 40px;
+}
+.login-in__input--correo-electronico {
+  position: absolute;
+  top: 427px;
+  left: 41px;
+  color: var(--color-gray-100);
+}
+.login-in__label--contrasenia {
+  position: absolute;
+  top: 496px;
+  left: 21px;
+  font-weight: 600;
+}
+.login-in__link--olvidaste-contrasenia {
+  position: absolute;
+  top: 498px;
+  left: 192px;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+}
+.login-in__iniciar-sesin-item {
+  position: absolute;
+  top: 532px;
+  left: calc(50% - 160px);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gainsboro);
+  border: 4px solid var(--color-gray-200);
+  box-sizing: border-box;
+  width: 319px;
+  height: 40px;
+}
+.login-in__ingresa-tu-contrasea {
+  position: absolute;
+  top: 542px;
+  left: 41px;
+  color: var(--color-gray-100);
+}
+.login-in__boton {
+  position: absolute;
+  top: 611px;
+  left: calc(50% - 80px);
+  border-radius: var(--br-3xs);
+  background: linear-gradient(90deg, #9cf0b4, #75a282);
+  width: 160px;
+  height: 40px;
+}
+.login-in__iniciar-sesin1 {
+  position: absolute;
+  top: 621px;
+  left: calc(50% - 52px);
+  color: #404040;
+  text-align: center;
+}
+.login-in__iniciar-sesin-inner {
+  position: absolute;
+  top: 675.5px;
+  left: 20.5px;
+  border-top: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 101px;
+  height: 1px;
+}
+.login-in__o-inicia-sesin {
+  position: absolute;
+  top: 668px;
+  left: calc(50% - 53px);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+.login-in__line-div {
+  position: absolute;
+  top: 675.5px;
+  left: 239.5px;
+  border-top: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 101px;
+  height: 1px;
+}
+.login-in__icono-fb {
+  left: 78px;
+}
+.login-in__icono-fb,
+.login-in__icono-gg,
+.login-in__icono-ig {
+  position: absolute;
+  top: 700px;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+.login-in__icono-gg {
+  left: calc(50% - 23px);
+}
+.login-in__icono-ig {
+  left: 236px;
+}
+.login-in__registrate {
+  font-weight: 600;
+}
+.login-in__no-tienes-cuenta-container {
+  position: absolute;
+  top: 762px;
+  left: calc(50% - 86px);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+}
+.login-in__container{
+  &--main{
+    position: relative;
+    background-color: $cp1-darkest;
+    overflow: hidden;
+    text-align: left;
+    color: $cp1-lightest;
+    font-family: $font-terciary;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 15vh 17vw;
+  }
+  &--content{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    /*Flex para el contenido*/
+    display: inline-block;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+  }
+}
 
 
 
