@@ -6,7 +6,7 @@ import { LoginRegister } from "./LoginRegister";
 function Login() {
   return (
     <>
-      <LoginMenu />
+      <LoginIn />
     </>
   );
 }
