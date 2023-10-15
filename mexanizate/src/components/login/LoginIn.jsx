@@ -20,13 +20,13 @@ function LoginIn() {
               media="(min-width: 480px)"
               srcSet="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315251929088/Logo_MXZ.png"
               />
-              <img className="login-menu__logo"
+              <img className="login--menu__logo"
                 src="https://cdn.discordapp.com/attachments/1093647045350412298/1149208315889455114/Logo_MXZ_v.png"
                 alt="Mexanizate Login"
               />
             </picture>
           </div>
-          <b className="login-in__title-h2--inicio-de-sesion">Inicio de sesión</b>
+          <p className="login-in__title-h2--inicio-de-sesion">Inicio de sesión</p>
           <div className="login-in__container--inicio-sesion">
             <span>Inicia sesión con tu cuenta </span>
             <b>Mexanizate</b>
