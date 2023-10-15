@@ -30,8 +30,8 @@
 .login-menu__title {
   position: absolute;
   top: 0;
-  left: calc(50% - 4.93rem);
-  font-size: 1.5rem;
+  left: calc(50% - 9.88rem);
+  font-size: 2.9rem;
   background: linear-gradient(0deg, #75a282, #9cf0b4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,21 +49,21 @@
     margin: 0 auto;
     border-radius: var(--br-3xs);
     background: linear-gradient(90deg, #9cf0b4, #75a282);
-    width: 13rem;
-    height: 3rem;
+    width: 24rem;
+    height: 6rem;
     cursor: pointer;
     /*Flex para el contenido*/
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
-    margin-bottom: 2rem;
+    margin-bottom: 2.3rem;
   }
   &--register{
     margin: 0 auto;
     border-radius: var(--br-3xs);
     background: linear-gradient(90deg, #9cf0b4, #75a282);
-    width: 13rem;
-    height: 3rem;
+    width: 24rem;
+    height: 6rem;
     cursor: pointer;
     /*Flex para el contenido*/
     display: flex;
@@ -73,10 +73,10 @@
 }
 .login-menu__text {
   &--login{
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
   &--register{
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 }
 .login-menu__container {
@@ -89,7 +89,8 @@
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
-    padding: 3vh 17vw;
+    padding: 3vh 10vw;
+    overflow-y: scroll;
   }
   &--content{
     width: 100%;
@@ -106,8 +107,8 @@
   &--logo{
     position: relative;
     margin: 0 auto;
-    width: 20rem;
-    height: 18rem;
+    width: 34rem;
+    height: 31rem;
   }
 }
 
